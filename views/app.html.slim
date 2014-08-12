@@ -5,6 +5,10 @@ html ng-app="quizApp"
     script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"
     script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"
 
+    link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
+
   body ng-controller="AppCtrl"
 
     h1 Hello FlashQuiz
@@ -16,6 +20,13 @@ html ng-app="quizApp"
       }]);
 
       app.controller("AppCtrl", function ($scope, cardsFactory) {
+          cardsFactory.getCards().success(function (data) {
+            app.cards = data;
+            console.log('loaded cards:', app.cards);
+          });
+      });
+
+      app.controller("Ctrl", function ($scope, cardsFactory) {
           cardsFactory.getCards().success(function (data) {
             app.cards = data;
             console.log('loaded cards:', app.cards);

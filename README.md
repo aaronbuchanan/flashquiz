@@ -10,7 +10,7 @@ PROGRESS:
 [x] dev env readme
 [x] server-side router
 [x] db & active-record schema 
-[ ] spa setup (angular+bootstrap3)
+[x] spa setup (angular+bootstrap3)
 [ ] card list view
 [ ] adding/removing flashcards
 [ ] card quiz view
