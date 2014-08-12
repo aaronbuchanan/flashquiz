@@ -4,3 +4,9 @@ ul.list-group
   li.list-group-item ng-repeat="card in cards"
     span 
       | {{card.question}}
+
+h4 New Card
+form action="/card" method="POST"
+  input type="text" name="question" placeholder="Question"
+  input type="text" name="answer" placeholder="Answer"
+  input type="submit" value="Add Card"

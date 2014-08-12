@@ -22,3 +22,10 @@ get "/cards.json" do
   @cards.to_json
 end
 
+post "/card" do
+  @card = Card.new(
+    question: params[:question],
+    answer: params[:answer])
+  @card.save
+  redirect back
+end

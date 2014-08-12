@@ -8,14 +8,14 @@ app.config(['$routeProvider', function ($router) {
 }]);
 
 app.controller("AppCtrl", function ($scope, cardsFactory) {
-    cardsFactory.getCards().success(function (data) {
-      app.cards = data;
-      console.log('loaded cards:', app.cards);
-    });
+  cardsFactory.getCards().success(function (data) {
+    app.cards = data;
+    console.log('loaded cards:', app.cards);
+  });
 });
 
 app.controller("EditCtrl", function ($scope) {
-    $scope.cards = app.cards;
+  $scope.cards = app.cards;
 });
 
 app.factory("cardsFactory", function ($http) {

@@ -12,7 +12,7 @@ PROGRESS:
 [x] db & active-record schema 
 [x] spa setup (angular+bootstrap3)
 [x] card list view
-[ ] adding/removing flashcards
+[-] adding/removing flashcards
 [ ] card quiz view
 [ ] quiz scoring mechanics
 [ ] highest quiz score
