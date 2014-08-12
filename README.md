@@ -28,4 +28,4 @@ LOCAL DEVELOPMENT:
 1. clone this repo
 2. rvm should switch to 2.1.0
 3. run `$ bundle install`
-4. run `$ ruby server.rb`
+4. run `$ shotgun`
