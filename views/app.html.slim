@@ -1,7 +1,32 @@
 doctype html
-html 
+html ng-app="quizApp"
   head
     title FlashQuiz MVP
+    script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"
 
-  body
+  body ng-controller="AppCtrl"
+
     h1 Hello FlashQuiz
+
+    javascript:
+      var app = angular.module('quizApp', ['ngRoute']);
+
+      app.config(['$routeProvider', function ($router) {
+      }]);
+
+      app.controller("AppCtrl", function ($scope, cardsFactory) {
+          cardsFactory.getCards().success(function (data) {
+            app.cards = data;
+            console.log('loaded cards:', app.cards);
+          });
+      });
+
+      app.factory("cardsFactory", function ($http) {
+        var factory = {};
+        factory.getCards = function () {
+          return $http.get('/cards.json');
+        };
+        return factory;
+      });
+
