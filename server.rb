@@ -7,6 +7,10 @@ set :database, "sqlite3:flashquiz.db"
 class Card < ActiveRecord::Base
 end
 
+class Highscore < ActiveRecord::Base
+end
+
+
 get "/" do
   slim :"app.html"
 end
@@ -17,6 +21,10 @@ end
 
 get "/quiz" do
   slim :"quiz.html"
+end
+
+get "/results" do
+  slim :"results.html"
 end
 
 get "/cards.json" do
@@ -37,4 +45,15 @@ end
 delete "/card" do
   @card = Card.find(params[:id]).destroy
   redirect back
+end
+
+post "/highscore" do
+  content_type :json
+
+  @json = JSON.parse(request.body.read)
+  @score = Highscore.new(score: @json['score'])
+  @score.save
+
+  @high = Highscore.order('score DESC').first
+  @high.to_json
 end

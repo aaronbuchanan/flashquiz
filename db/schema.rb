@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812041319) do
+ActiveRecord::Schema.define(version: 20140812062628) do
 
   create_table "cards", force: true do |t|
     t.string   "question"
     t.text     "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "highscores", force: true do |t|
+    t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

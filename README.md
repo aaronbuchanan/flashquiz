@@ -15,7 +15,7 @@ PROGRESS:
 [x] adding/removing flashcards
 [x] card quiz view
 [x] quiz scoring mechanics
-[ ] highest quiz score
+[x] highest quiz score
 [ ] refactor & docs pass
 [ ] styling pass
 [ ] quiz progress feedback
