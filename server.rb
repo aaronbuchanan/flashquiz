@@ -15,6 +15,10 @@ get "/edit" do
   slim :"edit.html"
 end
 
+get "/quiz" do
+  slim :"quiz.html"
+end
+
 get "/cards.json" do
   content_type :json
 
