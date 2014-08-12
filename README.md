@@ -13,7 +13,7 @@ PROGRESS:
 [x] spa setup (angular+bootstrap3)
 [x] card list view
 [x] adding/removing flashcards
-[ ] card quiz view
+[x] card quiz view
 [ ] quiz scoring mechanics
 [ ] highest quiz score
 [ ] refactor & docs pass
