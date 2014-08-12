@@ -1,7 +1,7 @@
 flashquiz
 =========
 
-An angular flash card app with ruby/sinatra on the backend. â Edit
+An angular flash card app with ruby/sinatra on the backend.
 
 
 #### PROGRESS:
