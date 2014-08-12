@@ -29,3 +29,8 @@ post "/card" do
   @card.save
   redirect back
 end
+
+delete "/card" do
+  @card = Card.find(params[:id]).destroy
+  redirect back
+end

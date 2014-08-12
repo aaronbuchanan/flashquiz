@@ -4,6 +4,11 @@ ul.list-group
   li.list-group-item ng-repeat="card in cards"
     span 
       | {{card.question}}
+    form action="/card" method="POST"
+      input type="hidden" name="_method" value="DELETE"
+      input type="hidden" name="id" value="{{card.id}}"
+      input type="submit" value="Remove"
+
 
 h4 New Card
 form action="/card" method="POST"
