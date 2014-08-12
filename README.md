@@ -6,7 +6,7 @@ An (Work in progress) angular app with a quick and dirt ruby/sinatra backend tha
 
 PROGRESS:
 
-[ ] dev env setup (ruby+sinatra+sqlite3+active record)
+[x] dev env setup (ruby+sinatra+sqlite3+active record)
 [ ] dev env readme
 [ ] server-side router
 [ ] initial route (Let's just display the list view for now)
