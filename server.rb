@@ -11,6 +11,10 @@ get "/" do
   slim :"app.html"
 end
 
+get "/edit" do
+  slim :"edit.html"
+end
+
 get "/cards.json" do
   content_type :json
 
