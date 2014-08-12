@@ -21,13 +21,16 @@ app.controller("EditCtrl", function ($scope) {
   $scope.cards = app.cards;
 });
 
-app.controller("QuizCtrl", function ($scope, $location) {
+app.controller("QuizCtrl", function ($scope, $location, $timeout) {
 
-  $scope.total = app.cards.length;
-  $scope.attemptsLeft = 3;
+  var TOTAL_ATTEMPTS = 2;
+
+  $scope.score = 0;
+  $scope.attemptsLeft = TOTAL_ATTEMPTS;
   $scope.secondsElapsed = 0;
   $scope.index = 0;
   $scope.card = app.cards[$scope.index];
+  $scope.total = app.cards.length;
 
   $scope.checkAnswer = function () {
     var input = $('#input').val();
@@ -39,19 +42,55 @@ app.controller("QuizCtrl", function ($scope, $location) {
     }
   }
 
+  $scope.onTimeout = function(){
+    $scope.secondsElapsed++;
+    mytimeout = $timeout($scope.onTimeout, 1000);
+  }
+  var mytimeout = $timeout($scope.onTimeout, 1000);
+  $scope.stop = function(){
+    $timeout.cancel(mytimeout);
+  }
+
   function correctAnswer() {
-    $scope.attemptsLeft = 3;
+    addPoints();
+    $scope.attemptsLeft = TOTAL_ATTEMPTS;
     $scope.secondsElapsed = 0;
     $scope.index++;
     $scope.card = app.cards[$scope.index];
     if (!$scope.card) {
-      //TODO: calculate score
       $location.path('/results');
     }
   }
 
   function incorrectAnswer() {
     $scope.attemptsLeft--;
+  }
+
+  function addPoints() {
+    var base = 100/$scope.total;
+    var time = getTimeMultiplyer($scope.secondsElapsed);
+    var attempts = getAttemptsMultiplyer($scope.attemptsLeft);
+    
+    $scope.score += (base*time*attempts);
+
+    debugger;
+  }
+
+  function getTimeMultiplyer(time) {
+    switch (true) {
+      case time <= 10:
+        return 1;
+      case time <= 20:
+        return .9;
+      case time <= 30:
+        return .8;
+      default:
+        return .75;
+    }
+  }
+
+  function getAttemptsMultiplyer(attempts) {
+    return [1, .75, .5][TOTAL_ATTEMPTS-attempts];
   }
 });
 
