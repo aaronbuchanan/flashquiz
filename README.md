@@ -9,7 +9,7 @@ PROGRESS:
 [x] dev env setup (ruby+sinatra+sqlite3+active record)
 [x] dev env readme
 [x] server-side router
-[ ] db & active-record schema 
+[x] db & active-record schema 
 [ ] spa setup (angular+bootstrap3)
 [ ] card list view
 [ ] adding/removing flashcards
@@ -28,4 +28,5 @@ LOCAL DEVELOPMENT:
 1. clone this repo
 2. rvm should switch to 2.1.0
 3. run `$ bundle install`
+3. run `$ rake db:migrate`
 4. run `$ shotgun`
