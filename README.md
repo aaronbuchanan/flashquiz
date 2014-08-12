@@ -9,6 +9,7 @@ PROGRESS:
 [x] dev env setup (ruby+sinatra+sqlite3+active record)
 [x] dev env readme
 [x] server-side router
+[ ] db & active-record schema 
 [ ] spa setup (angular+bootstrap3)
 [ ] card list view
 [ ] adding/removing flashcards
