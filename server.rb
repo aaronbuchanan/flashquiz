@@ -1,5 +1,6 @@
 require "sinatra"
+require "slim"
 
 get "/" do
-  "hello flashquiz"
+  slim :"app.html"
 end
