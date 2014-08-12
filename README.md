@@ -17,8 +17,8 @@ PROGRESS:
 [x] quiz scoring mechanics
 [x] highest quiz score
 [ ] refactor & docs pass
-[ ] styling pass
-[ ] quiz progress feedback
+[x] styling pass
+[x] quiz progress feedback
 [ ] deploy
 [ ] docs review/fresh run
 

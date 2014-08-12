@@ -1,4 +1,4 @@
-var TOTAL_ATTEMPTS = 2;
+var TOTAL_ATTEMPTS = 3;
 
 var app = angular.module('quizApp', ['ngRoute']);
 
@@ -47,12 +47,13 @@ app.controller("QuizCtrl", function ($scope, $location, $timeout, $http) {
 
   // user input
   $scope.checkAnswer = function () {
-    var input = $('#input').val();
-    console.log(input, $scope.card.answer, input==$scope.card.answer);
-    if (input == $scope.card.answer) {
+    var input = $('#input');
+    var value = input.val();
+    if (value == $scope.card.answer) {
       correctAnswer();
     } else {
       incorrectAnswer();
+      input.val('');
     }
   }
 
@@ -83,6 +84,7 @@ app.controller("QuizCtrl", function ($scope, $location, $timeout, $http) {
     var time = getTimeMultiplyer($scope.secondsElapsed);
     var attempts = getAttemptsMultiplyer($scope.attemptsLeft);
     $scope.score = Math.round($scope.score+(base*time*attempts));
+    debugger;
   }
 
   function getTimeMultiplyer(time) {

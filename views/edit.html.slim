@@ -1,23 +1,37 @@
-h5 Cards
+.panel.panel-default
+  .panel-heading
+    h4.panel-title
+      span.glyphicon.glyphicon-th-list
+      |  Cards
+  .panel-body
+    ul.list-group
+      li.list-group-item ng-repeat="card in cards"
+        span 
+          | {{card.question}}
+        form.pull-right action="/card" method="POST"
+          input type="hidden" name="_method" value="DELETE"
+          input type="hidden" name="id" value="{{card.id}}"
+          input.btn.btn-xs.btn-danger type="submit" value="Remove"
 
-ul.list-group
-  li.list-group-item ng-repeat="card in cards"
-    span 
-      | {{card.question}}
+
+.panel.panel-default
+  .panel-heading
+    h4.panel-title
+      span.glyphicon.glyphicon-plus
+      |  New Card
+  .panel-body
     form action="/card" method="POST"
-      input type="hidden" name="_method" value="DELETE"
-      input type="hidden" name="id" value="{{card.id}}"
-      input type="submit" value="Remove"
+      input style="width:100%; margin-top:4px;" type="text" name="question" placeholder="Question"
+      input style="width:100%; margin-top:4px;" type="text" name="answer" placeholder="Answer"
+      input.btn.btn-success style="margin-top:4px;" type="submit" value="Add Flash Card"
 
 
-h5 New Card
-form action="/card" method="POST"
-  input type="text" name="question" placeholder="Question"
-  input type="text" name="answer" placeholder="Answer"
-  input type="submit" value="Add Card"
-
-
-h5 Ready?
-a href="/#/quiz" 
-  | Start your FlashQuiz
+.panel.panel-default
+  .panel-heading
+    h4.panel-title
+      span.glyphicon.glyphicon-ok
+      |  Ready?
+  .panel-body
+    a href="/#/quiz" 
+      button.btn.btn-primary Start your FlashQuiz
 

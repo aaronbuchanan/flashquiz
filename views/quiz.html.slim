@@ -1,11 +1,14 @@
-h4 Card {{index+1}} of {{total}} 
-span Current Score: {{score}}
+span.badge.pull-right style="position:relative; top:-30px;"
+  | Score: {{score}} - 
+  | Card {{index+1}}/{{total}} - 
+  | {{secondsElapsed}}s - 
+  | {{attemptsLeft}}/3 attempts
 
-h6 
-  | {{card.question}}
-
-p = "{{secondsElapsed}} Seconds"
-p = "{{attemptsLeft}} Tries Left"
-
-input type="text" name="input" id="input"
-input type="button" value="Submit" ng-click="checkAnswer()"
+.panel.panel-default
+  .panel-heading
+    h4.panel-title
+      |  {{card.question}}
+  .panel-body
+    input style="width:100%" type="text" name="input" id="input" placeholder="Answer..."
+    p.text-center style="margin-top:10px;"
+      input.btn.btn-primary type="button" value="Submit" ng-click="checkAnswer()"
