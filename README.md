@@ -7,7 +7,7 @@ An (Work in progress) angular app with a quick and dirt ruby/sinatra backend tha
 PROGRESS:
 
 [x] dev env setup (ruby+sinatra+sqlite3+active record)
-[ ] dev env readme
+[x] dev env readme
 [ ] server-side router
 [ ] initial route (Let's just display the list view for now)
 [ ] spa setup (angular+bootstrap3)
@@ -21,3 +21,11 @@ PROGRESS:
 [ ] quiz progress feedback
 [ ] deploy
 [ ] docs review/fresh run
+
+
+LOCAL DEVELOPMENT:
+
+1. clone this repo
+2. rvm should switch to 2.1.0
+3. run `$ bundle install`
+4. run `$ ruby server.rb`
