@@ -11,7 +11,7 @@ PROGRESS:
 [x] server-side router
 [x] db & active-record schema 
 [x] spa setup (angular+bootstrap3)
-[ ] card list view
+[x] card list view
 [ ] adding/removing flashcards
 [ ] card quiz view
 [ ] quiz scoring mechanics
