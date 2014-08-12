@@ -8,8 +8,7 @@ PROGRESS:
 
 [x] dev env setup (ruby+sinatra+sqlite3+active record)
 [x] dev env readme
-[ ] server-side router
-[ ] initial route (Let's just display the list view for now)
+[x] server-side router
 [ ] spa setup (angular+bootstrap3)
 [ ] card list view
 [ ] adding/removing flashcards
