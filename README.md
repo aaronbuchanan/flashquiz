@@ -1,11 +1,12 @@
 flashquiz
 =========
 
-An (Work in progress) angular app with a quick and dirt ruby/sinatra backend that allows users to manage a set of flash cards and take a quiz with a time and accuracy based scoring mechanic.
+An angular flash card app with ruby/sinatra on the backend. â Edit
 
 
-PROGRESS:
+#### PROGRESS:
 
+```
 [x] dev env setup (ruby+sinatra+sqlite3+active record)
 [x] dev env readme
 [x] server-side router
@@ -16,14 +17,13 @@ PROGRESS:
 [x] card quiz view
 [x] quiz scoring mechanics
 [x] highest quiz score
-[ ] refactor & docs pass
 [x] styling pass
 [x] quiz progress feedback
+[ ] refactor & docs pass
 [ ] deploy
-[ ] docs review/fresh run
+```
 
-
-LOCAL DEVELOPMENT:
+#### LOCAL DEVELOPMENT:
 
 1. clone this repo
 2. rvm should switch to 2.1.0
