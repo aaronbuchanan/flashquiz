@@ -19,6 +19,10 @@ An angular flash card app with ruby/sinatra on the backend.
 [x] highest quiz score
 [x] styling pass
 [x] quiz progress feedback
+[ ] provide a few default cards
+[ ] handle empty card list better
+[ ] refactor to bower for FE deps
+[ ] concat & minify scripts
 [ ] refactor & docs pass
 [ ] deploy
 ```
