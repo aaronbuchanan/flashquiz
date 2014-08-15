@@ -53,8 +53,8 @@ app.controller("QuizCtrl", function ($scope, $location, $timeout, $http) {
       correctAnswer();
     } else {
       incorrectAnswer();
-      input.val('');
     }
+    input.val('');
   }
 
   function correctAnswer() {
